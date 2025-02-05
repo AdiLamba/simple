@@ -1,0 +1,26 @@
+name: A basic workflow
+
+#names are optional, uses and run are mandatory?
+# this YAML (interchangable wiht YML) runs once you commit to main, its a workflow (aka github action)
+
+on: push
+
+jobs:
+  job1: 
+    name: first job
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Step one
+        uses: actions/checkout@v4
+      - name: Step two
+        run: ls -la
+      - run: pwd
+
+  job2:
+    name: second job to run
+    runs-on: windows-latest
+    steps:
+      - name: step one of job2
+        uses: actions/checkout@v4
+      - name: step two of job2
+        run: pwd
